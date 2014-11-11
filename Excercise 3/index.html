@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excercise 3</title>  
+
+  <script src="../angular.min.js"></script>
+  <script src="index.js"></script>
+  
+</head>
+<body ng-app="" ng-init="stories = [
+        {title:'Story 00', description:'Description pending.'},
+        {title:'Story 01', description:'Description pending.'},
+        {title:'Story 02', description:'Description pending.'},
+        {title:'Story 03', description:'Description pending.'},
+        {title:'Story 04', description:'Description pending.'},
+        {title:'Story 05', description:'Description pending.'}]">
+
+    	<div ng-repeat="story in stories">
+
+        <table>
+          <tr><th>Title</th> <th>Description</th></tr>
+          <tr>
+            <td> {{ story.title }} </td>
+            <td> {{ story.description }} </td>
+          </tr>
+        </table>
+    	</div>
+ 
+</body>
+</html>

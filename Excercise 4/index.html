@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excercise 4</title>  
+
+  <script src="../angular.min.js"></script>
+  <script src="index.js"></script>
+  
+</head>
+<body ng-app="angularTest">
+	<div ng-controller="mainController">
+    	<div ng-repeat="story in stories">
+
+        <table>
+          <tr><th>Title</th> <th>Description</th></tr>
+          <tr>
+            <td> {{ story.title }} </td>
+            <td> {{ story.description }} </td>
+          </tr>
+        </table>
+      </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excercise 5</title>  
+
+  <script src="../angular.min.js"></script>
+  <script src="index.js"></script>
+  
+</head>
+<body ng-app="angularTest">
+
+  <div ng-controller="mainController">
+    Name Filter: <input type="text" ng-model="nameFilter">
+    <div>
+      <ul ng-repeat="friend in friends| orderBy:'-name' | filter:nameFilter ">
+        <li >{{ friend.name }} <a ng-click="removeFriend(friend)" style="color: blue;cursor: pointer;">Delete</a></li>
+      </ul>
+    </div>
+
+    Add Name: <input type="text" ng-model="newName">
+    <button ng-click="addFriend()">Add</button>
+
+  </div>    
+</body>
+</html>

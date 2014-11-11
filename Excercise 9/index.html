@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excercise 9</title>  
+
+  <script src="../angular.min.js"></script>
+  <script src="index.js"></script>
+  <script src="moment.js"></script>
+  
+</head>
+<body ng-app="angularTest">
+  <div ng-controller="myBusStopCtrl">
+    Bus Filter: <input type="text" ng-model="busFilter">
+    <div >
+      <table>
+        <tr>
+          <th style="width: 200px;">Bus#</th> 
+          <th style="width: 200px;">Destination</th>
+          <th style="width: 200px;">Wait Time</th>
+        </tr>
+        <tr ng-repeat="city in realTimeData| filter:busFilter | orderBy:'ExpectedArrivalTime' ">
+          <td style="width: 200px;text-align: center;"> {{ city.LineRef }} </td>
+          <td style="width: 200px;text-align: center;"> {{ city.DestinationName }} </td>
+          <td style="width: 200px;text-align: center;"> {{ city.ExpectedArrivalTime | fromNow }} </td>
+        </tr>
+      </table>
+    </div>
+    <br>
+  </div>   
+
+</body>
+</html>

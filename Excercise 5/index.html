@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excercise 5</title>  
+
+  <script src="../angular.min.js"></script>
+  <script src="index.js"></script>
+  
+</head>
+<body ng-app="angularTest">
+  <div ng-controller="mainController">
+    <input type="text" ng-model="storyFilter">
+    <div ng-repeat="story in stories| orderBy:'description' | filter:storyFilter ">
+      <table>
+        <tr><th>Title</th> <th>Description</th></tr>
+        <tr>
+          <td> {{ story.title }} </td>
+          <td> {{ story.description }} </td>
+        </tr>
+      </table>
+    </div>
+
+    <input type="text" ng-model="nameFilter">
+    <div ng-repeat="friend in friends| orderBy:'-name' | filter:nameFilter ">
+      <table>
+        <tr><th>Name</th> <th>Age</th></tr>
+        <tr>
+          <td> {{ friend.name }} </td>
+          <td> {{ friend.age }} </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>    
+</body>
+</html>

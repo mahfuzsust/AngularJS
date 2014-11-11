@@ -1,0 +1,12 @@
+<div ng-controller="subController" ng-views="">
+    Name Filter: <input type="text" ng-model="nameFilter">
+    <div ng-repeat="friend in friends| orderBy:'-name' | filter:nameFilter ">
+      <table>
+        <tr><th>Name</th> <th>Age</th></tr>
+        <tr>
+          <td> {{ friend.name }} </td>
+          <td> {{ friend.age }} </td>
+        </tr>
+      </table>
+    </div>
+  </div>
