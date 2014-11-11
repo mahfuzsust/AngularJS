@@ -1,4 +1,4 @@
 AngularJS
 =========
 
-AngularJS Practice
+Some excercise for learning AngularJS.
